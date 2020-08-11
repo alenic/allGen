@@ -14,7 +14,6 @@ namespace allgen {
       static void setSeed(unsigned int t_seed);
     };
 
-
     typedef Stat<float> FloatStat;
     typedef Stat<double> DoubleStat;
 

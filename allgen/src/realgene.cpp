@@ -24,7 +24,7 @@ void RealGene<RealType>::mutate(float t_intensity)
         if(m_value > m_max_value) m_value = m_max_value;
     } else if(m_mutation == REAL_MUTATION_GAUSSIAN) {
         // TODO
-        cerr << "Error mutation gaussian to implement!" << endl;
+        cerr << "Error mutation gaussian muste be implemented!" << endl;
     }
 
 }
@@ -45,4 +45,10 @@ void RealGene<RealType>::setMutation(const std::string &t_mutation)
     } else {
         cerr << "Error: Invalid mutation type: " << t_mutation << endl;
     }
+}
+
+template<class RealType>
+RealType RealGene<RealType>::value() const
+{
+    return m_value;
 }

@@ -7,7 +7,7 @@
 
 namespace allgen {
 
-typedef enum {REAL_MUTATION_UNIFORM=0, REAL_MUTATION_GAUSSIAN} RealMutationType;
+    typedef enum {REAL_MUTATION_UNIFORM=0, REAL_MUTATION_GAUSSIAN} RealMutationType;
 
     template <class RealType>
     class RealGene: Gene {
@@ -16,6 +16,8 @@ typedef enum {REAL_MUTATION_UNIFORM=0, REAL_MUTATION_GAUSSIAN} RealMutationType;
         void mutate(float t_intensity) override;
         void random() override;
         void setMutation(const std::string &t_mutation);
+        RealType value() const;
+
     private:
         RealType m_value;
         RealType m_min_value;
