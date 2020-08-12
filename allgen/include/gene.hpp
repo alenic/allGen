@@ -5,6 +5,7 @@ namespace allgen {
 
     class Gene {
     public:
+        virtual ~Gene();
         virtual void mutate(float t_intensity) = 0;
         virtual void random() = 0;
     };

@@ -6,6 +6,12 @@ using namespace allgen;
 using namespace std;
 
 template<class RealType>
+RealGene<RealType>::~RealGene()
+{
+
+}
+
+template<class RealType>
 RealGene<RealType>::RealGene(RealType t_min_value, RealType t_max_value)
 {
     m_value = (t_min_value + t_max_value)/2.0;
@@ -24,9 +30,8 @@ void RealGene<RealType>::mutate(float t_intensity)
         if(m_value > m_max_value) m_value = m_max_value;
     } else if(m_mutation == REAL_MUTATION_GAUSSIAN) {
         // TODO
-        cerr << "Error mutation gaussian muste be implemented!" << endl;
+        cerr << "Error: gaussian mutation must be implemented!" << endl;
     }
-
 }
 
 template<class RealType>
@@ -48,7 +53,13 @@ void RealGene<RealType>::setMutation(const std::string &t_mutation)
 }
 
 template<class RealType>
-RealType RealGene<RealType>::value() const
+RealType RealGene<RealType>::getValue() const
 {
     return m_value;
+}
+
+template<class RealType>
+void RealGene<RealType>::setValue(const RealType &value)
+{
+    m_value = value;
 }

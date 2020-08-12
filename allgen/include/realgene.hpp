@@ -12,11 +12,13 @@ namespace allgen {
     template <class RealType>
     class RealGene: Gene {
     public:
+        ~RealGene();
         RealGene(RealType t_min_value, RealType t_max_value);
         void mutate(float t_intensity) override;
         void random() override;
         void setMutation(const std::string &t_mutation);
-        RealType value() const;
+        RealType getValue() const;
+        void setValue(const RealType &value);
 
     private:
         RealType m_value;
